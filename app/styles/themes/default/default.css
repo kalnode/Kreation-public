@@ -1,0 +1,117 @@
+
+
+@theme {
+
+    /*
+    --font-h1: 4rem;
+    --font-h1: clamp(2.75rem, 2.6512rem + 0.5269vw, 4rem);
+    --font-h2: clamp(1.5rem, 1.0982rem + 1.7143vw, 2.5rem);
+    --font-h3: clamp(1.375rem, 1.1837rem + .8163vw, 2rem);
+    --font-h4: clamp(1.375rem, 1.1837rem + .8163vw, 1.6rem);
+    --font-h5: clamp(1rem, .9235rem + .3265vw, 1.25rem);
+    --font-h6: clamp(1rem, .9617rem + .1633vw, 1.125rem);
+    --font-body: clamp(1rem, .8852rem + .4898vw, 1.375rem);
+    --font-link: clamp(.875rem, .7985rem + .3265vw, 1.125rem);
+    --font-mini: clamp(.875rem, .8367rem + .1633vw, 1rem);
+    */
+   
+    --spacing-xxl: max( 130px, calc(130px + (260 - 130) * ((100vw - 375px) / (1600 - 375))) );
+    --spacing-xl: max( var(--64px), calc(var(--64px) + (128 - 64) * ((100vw - 375px) / (1600 - 375))) );
+    --spacing-l: max( var(--42px), calc(var(--42px) + (84 - 42) * ((100vw - 375px) / (1600 - 375))) );
+    --spacing-m: max( var(--24px), calc(var(--24px) + (48 - 24) * ((100vw - 375px) / (1600 - 375))) );
+    --spacing-s: max( var(--21px), calc(var(--21px) + (42 - 21) * ((100vw - 375px) / (1600 - 375))) );
+    --spacing-xs: max( var(--14px), calc(var(--14px) + (28 - 14) * ((100vw - 375px) / (1600 - 375))) );
+    --spacing-xxs: max( calc(var(--14px) / 2), calc((var(--14px) / 2) + (14 - 7) * ((100vw - 375px) / (1600 - 375))) );
+    
+    --shadow-lg: 0px 50px 100px -20px var(--color-shadow);
+    --spaceBelowGalleryThumbnails: calc(var(--spacing) * 6);
+
+    --brunswick-green: #134942;
+    --brunswick-green-lighter: hsl(172 60% 42% / 1);
+    --green-lighter: #1D7266;
+    --green-lightest: #94b9b4;
+    --alabaster: #FAF4EB;
+    --yellow-green: #A2E15A;
+    --yellow-green-darker: #436c14;
+    --chinese-violet: #7B506F;
+    --dark-purple: hsla(250, 37%, 16%, 1);
+    --green-darker: #134941; 
+    --yellow-green-lighter: #AFE76F;
+    --color-secondary: var(--green-lighter);    
+    --color-shadow: rgba(0, 0, 0, .15);
+    --color-overlay-bg: rgb(76, 76, 76);
+    
+
+    /*
+    --ui-text-dimmed: var(--ui-color-neutral-500);
+    --ui-text-muted: var(--ui-color-neutral-400);
+    --ui-text-toned: var(--ui-color-neutral-300);
+    --ui-text: var(--ui-color-neutral-200);
+    --ui-text-highlighted: var(--color-white);
+    --ui-bg: var(--ui-color-neutral-900);
+    --ui-bg-muted: var(--ui-color-neutral-800);
+    --ui-bg-elevated: var(--ui-color-neutral-800);
+    --ui-bg-accented: var(--ui-color-neutral-700);
+    --ui-bg-inverted: var(--color-white);
+    --ui-border: var(--ui-color-neutral-800);
+    --ui-border-muted: var(--ui-color-neutral-700);
+    --ui-border-accented: var(--ui-color-neutral-700);
+    --ui-border-inverted: var(--color-white);
+    --ui-primary: var(--ui-color-primary-400);
+    --ui-secondary: var(--ui-color-secondary-400);
+    --ui-success: var(--ui-color-success-400);
+    --ui-info: var(--ui-color-info-400);
+    --ui-warning: var(--ui-color-warning-400);
+    --ui-error: var(--ui-color-error-400);
+    */
+
+}
+
+:root,
+.dark .color-mode-invert {
+    --color-primary: var(--yellow-green);
+    --color-text: var(--green-lighter);
+    --color-bg: white;
+    --color-bg-lighter: var(--alabaster);
+    --color-bg-page: var(--alabaster);
+    --color-accent: var(--yellow-green);
+    --color-bg-container: white;
+    --color-border: var(--green-lightest);
+    --color-shadow2: #0000001a;
+    --color-text-link: var(--brunswick-green-lighter);
+    --ui-button-primary-text: var(--green-darker);
+    --ui-button-primary-bgcolor: var(--yellow-green-lighter);
+    --ui-text: var(--color-text);
+    --ui-text-link: var(--color-text-link);
+    --ui-bg: var(--color-bg);
+    --ui-bg-page: var(--color-bg-page);
+    --ui-bg-lighter: var(--color-bg-lighter);
+    --ui-bg-container: var(--color-bg-container);
+    --ui-primary: var(--color-accent);
+    --ui-border: var(--color-border);
+    --ui-effect-bg: #ffffffa6;
+    --ui-effect-bg2: hsl(0deg 0% 100% / 55%);
+    --ui-shadow2: 0 1px 0 var(--color-shadow2);
+}
+
+.dark,
+.color-mode-invert {
+    --color-shadow2: #ffffff1a;
+    --color-primary: var(--yellow-green);
+    --color-text: var(--alabaster);
+    --color-bg: black;
+    --color-bg-lighter: var(--green-lighter);
+    --color-bg-page: var(--brunswick-green);
+    --color-accent: var(--yellow-green);
+    --color-bg-container: black;
+    --color-shadow2: #3f3f3fa6;
+    --ui-text: var(--color-text);
+    --ui-bg: var(--color-bg);
+    --ui-bg-page: var(--color-bg-page);
+    --ui-bg-lighter: var(--color-bg-lighter);
+    --ui-bg-container: var(--color-bg-container);
+    --ui-primary: var(--color-accent);
+    --ui-effect-bg: #8fdcc21a;
+    --ui-effect-bg2: hsla(158, 23%, 18%, .7);
+    --ui-shadow2: 0 1px 0 var(--color-shadow2);
+}

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "esnext"
+  },
+  "extends": "./.nuxt/tsconfig.json",
+  // "include": [
+  //   "types/**/*.d.ts",
+  //   "src/**/*",
+  //   "app/**/*"
+  // ]
+}

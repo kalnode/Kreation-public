@@ -1,0 +1,9 @@
+@import "tailwindcss" theme(static);
+@import "@nuxt/ui";
+
+@import "./type.css";
+@import "./base.css";
+@import "./anim.css";
+@import "./themes/default/default.css";
+
+@source "../../content";
