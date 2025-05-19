@@ -1,0 +1,52 @@
+:root {
+
+    /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1920,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+    --step--2: clamp(0.6944rem, 0.6733rem + 0.1056vw, 0.8rem);
+    --step--1: clamp(0.8333rem, 0.8rem + 0.1667vw, 1rem);
+    --step-0: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+    --step-1: clamp(1.2rem, 1.1275rem + 0.3625vw, 1.5625rem);
+    --step-2: clamp(1.44rem, 1.3374rem + 0.5131vw, 1.9531rem);
+    --step-3: clamp(1.728rem, 1.5853rem + 0.7134vw, 2.4414rem);
+    --step-4: clamp(2.0736rem, 1.878rem + 0.9782vw, 3.0518rem);
+    --step-5: clamp(2.4883rem, 2.223rem + 1.3264vw, 3.8147rem);
+
+    --base-font-size: var(--step-0);
+
+    --h1-size: var(--step-5);
+    --h1-line-height: 110%;
+    --h1-letter-spacing: -2%;
+    --h1-font-weight: 700;
+
+    --h2-size: var(--step-4);
+    --h2-line-height: 110%;
+    --h2-letter-spacing: -2%;
+    --h2-font-weight: 600;
+
+    --h3-size: var(--step-3);
+    --h3-line-height: 110%;
+    --h3-letter-spacing: -2%;
+
+    --h4-size: var(--step-2);
+    --h4-line-height: 130%;
+    --h4-letter-spacing: -2%;
+
+    --h5-size: var(--step-1);
+    --h5-line-height: 130%;
+    --h5-letter-spacing: -1.5%;
+
+    --h6-size: var(--step-0);
+    --h6-line-height: 130%;
+    --h6-letter-spacing: -0.5%;
+    
+    --body-size: var(--step-0);
+    --body-line-height: 150%;
+    --body-letter-spacing: 0.5%;
+
+    --link-size: var(--step-0);
+    --link-line-height: 150%;
+    --link-letter-spacing: 0.5%;
+    
+    --caption-size: var(--step-0);
+    --caption-line-height: 160%;
+    --caption-letter-spacing: 1%;
+}

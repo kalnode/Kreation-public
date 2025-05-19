@@ -1,0 +1,439 @@
+:root {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    --pageTransitionTime: 400; /* ms */
+}
+
+@supports (padding-top: env(safe-area-inset-top)) {
+    html {
+        --safe-area-inset-top: env(safe-area-inset-top);
+        --safe-area-inset-right: env(safe-area-inset-right);
+        --safe-area-inset-bottom: env(safe-area-inset-bottom);
+        --safe-area-inset-left: env(safe-area-inset-left);
+    }
+}
+
+body,html {
+    font-size: var(--body-size);
+    background: var(--ui-bg-page);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "liga" on;
+    font-feature-settings: "liga" on;
+    -moz-font-feature-settings: "liga" on
+}
+
+html, body, #__nuxt {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: var(--body-line-height);        
+}
+
+*,*:before,*:after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,*:before,*:after {
+        animation-duration: .01ms!important;
+        animation-iteration-count: 1!important;
+        transition-duration: .01ms!important
+    }
+}
+
+
+/* ----------------- */
+/* PAGES */
+/* ----------------- */ 
+.pageWrapper {
+    width: 100%;
+}
+
+.pageWrapper .pageContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.pageWidth,
+.pageWrapper .pageContent .content {
+    max-width: var(--container-2xl);
+    margin: 0 auto;
+}
+
+.pageWrapper .pageContent .content {
+    display: block;
+}
+
+
+/* ----------------- */
+/* LINKS */
+/* ----------------- */
+.pageContent a {
+    color: var(--ui-text-link);
+}
+
+.pageContent a:hover {
+    color: var(--ui-text);
+}
+
+/* .hover\:text-\(--ui-text\) {
+    &:hover {
+        @media (hover: hover) {
+            color: var(--ui-text);
+        }
+    }
+} */
+
+/* ----------------- */
+/* CONTAINERS */
+/* ----------------- */
+.containerBG {
+    background-color: var(--ui-bg-container);
+}
+
+.specialContainer {
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 2rem 1rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.specialContainerRegularBG {
+    background-color: #ffffff6b;
+}
+
+
+/* ----------------- */
+/* PARAGRAPHS */
+/* ----------------- */
+.content p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+p+h2,
+ul+h2 {
+    margin-top: var(--spacing-m)
+}
+
+p+h3,
+ul+h3 {
+    margin-top: var(--spacing-m)
+}
+
+
+/* ----------------- */
+/* HEADERS */
+/* ----------------- */
+h1 {
+    font-size: var(--h1-size);
+    line-height: var(--h1-line-height);
+    letter-spacing: var(--h1-letter-spacing);
+    font-weight: var(--h1-font-weight);
+}
+
+h2 {
+    font-size: var(--h2-size);
+    line-height: var(--h2-line-height);
+    letter-spacing: var(--h2-letter-spacing);
+    font-weight: var(--h2-font-weight);
+}
+
+h3 {
+    font-size: var(--h3-size);
+    line-height: var(--h3-line-height);
+    letter-spacing: var(--h3-letter-spacing);
+}
+
+h4 {
+    font-size: var(--h4-size);
+    line-height: var(--h4-line-height);
+    letter-spacing: var(--h4-letter-spacing);
+}
+
+h5 {
+    font-size: var(--h5-size);
+    line-height: var(--h5-line-height);
+    letter-spacing: var(--h5-letter-spacing);
+}
+
+h6 {
+    font-size: var(--h6-size);
+    line-height: var(--h6-line-height);
+    letter-spacing: var(--h6-letter-spacing);
+}
+
+body {
+    font-size: var(--body-size);
+    line-height: var(--body-line-height);
+    letter-spacing: var(--body-letter-spacing);
+}
+
+link {
+    font-size: var(--link-size);
+    line-height: var(--link-line-height);
+    letter-spacing: var(--link-letter-spacing);
+}
+
+caption {
+    font-size: var(--caption-size);
+    line-height: var(--caption-line-height);
+    letter-spacing: var(--caption-letter-spacing);
+}
+
+.content h1 {
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+}
+
+.content h2 {
+    margin-top: 0.83em;
+    margin-bottom: 0.75em;
+}
+
+.content h3 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.content h4 {
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+}
+
+.content h5 {
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+}
+
+.content h6 {
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+}
+
+
+/* ----------------- */
+/* IMAGES */
+/* ----------------- */
+.page img {
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* ----------------- */
+/* BLOCKQUOTES */
+/* ----------------- */ 
+blockquote {
+    text-align: center;
+    margin: 4em 0;
+}
+
+
+/* ----------------- */
+/* LISTS */
+/* ----------------- */ 
+ul, ol, li {
+    list-style: disc
+}
+
+ul, ol {
+    margin: 0 0 0 2.5em;
+}
+
+ul.list_unstyled,
+ul.list_unstyled li {
+    list-style: none;
+    margin: 0;
+}
+
+
+/* ----------------- */
+/* CONTENT GRIDS */
+/* ----------------- */ 
+.contentWide {
+    display: block;
+    max-width: var(--container-3xl)
+}
+
+.gridCore {
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-flow: dense;
+    grid-template-rows: minmax(10rem, 15rem);
+}
+
+@media (width >= 52rem) {
+    .gridCore {
+        grid-template-rows: minmax(10rem, auto);
+    }
+
+    .gridCore .wide {
+        grid-column: span 2;
+    }
+
+    .gridCore .fullWidth {
+        grid-column: span 3;
+    }
+}
+
+
+.gridProjects {
+    grid-template-columns: none;
+    grid-template-rows: minmax(15rem, auto);
+}
+
+@media (width >= 52rem) {
+    .gridProjects {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: minmax(10rem, 20rem);
+    }
+}
+
+/*
+.threeColGrid {
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: minmax(15rem, auto);
+    grid-auto-flow: dense;
+    grid-auto-rows: 1fr;
+}
+
+@media (width >= 52rem) {
+    .threeColGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .threeColGrid .project.wide {
+        grid-column: span 2;
+    }
+}
+*/
+
+
+/* ----------------- */
+/* BUTTONS */
+/* ----------------- */ 
+
+/* TAILWIND V4 removed cursor-pointer-as-default on buttons for x reasons. Possible it's coming back.
+For now we do the below workaround */
+
+/*
+Set the default cursor for buttons.
+*/
+button,
+[role="button"] {
+    cursor: pointer;
+}
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+    cursor: not-allowed;
+}
+
+
+/* ------------------------ */
+/* MODALS/DIALOGS */
+/* ------------------------ */
+
+/* Custom background color for modals and drawers */
+[data-vaul-overlay] {
+    --ui-bg-elevated: var(--color-overlay-bg);
+}
+
+/* Set cursor:pointer on dialog bg. */
+div[aria-labelledby="reka-dialog-title-v-0-11-0"] {
+    cursor: pointer;
+}
+
+/* SHIFTING SCROLLBAR WHEN DRAWER/MODAL OPENS */
+/* TEMPORARY */
+/* @media (min-width: 600px) {
+    .popupOpen #__nuxt {
+        padding-right: 15.5px !important;
+    }
+} */
+
+/* PAGE BACKGROUND ZOOM OUT WHEN DRAWER/MODAL OPENS */
+/* #__nuxt {
+    transform-origin: center top;
+    transition-property: transform, border-radius;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+} */
+
+/* FOR PAGE ZOOMOUT when drawer or modal opens
+This is a workaround until NuxtUI is fixed */
+/*
+.zoomOut #__nuxt {
+    border-radius: 8px;
+    overflow: hidden;
+    transform: scale(0.9669211195928753) translate3d(0, calc(env(safe-area-inset-top) + 14px), 0);
+}
+*/
+
+
+/* ------------------------ */
+/* BLEED OFFSET */
+/* ------------------------ */
+.pageContent .bleedLeft,
+.pageContent .bleedRight {
+    float: none;
+    margin: calc(var(--spacing) * 4) auto;
+}
+
+@media (width >= 48rem /* 768px */) {
+    .pageContent .bleedRight {
+        float: right;
+        margin-right: calc(var(--spacing) * -16);
+        margin-left: calc(var(--spacing) * 4);
+    }
+
+    .pageContent .bleedLeft {
+        float: left;
+        margin-right: calc(var(--spacing) * 4);
+        margin-left: calc(var(--spacing) * -16);
+    }
+}
+
+/* ------------------------ */
+/* MISC */
+/* ------------------------ */
+.spaceBelowGalleryThumbnails {
+    /*  ENABLE if space-below thumbnails. */
+    /* margin-bottom: var(--spaceBelowGalleryThumbnails); */
+}
+
+.bordered {
+    border: 1px solid;
+    border-color: var(--color-border);
+}
+
+hr {
+    margin: 0 auto;
+    width: 100%;
+    max-width: clamp(75%, calc(100%* log(1.35)), 80%);
+    color: var(--color-secondary);
+    opacity: 0.75;
+}
+
+.frostedGlass {
+    background-color: var(--ui-effect-bg2);
+    backdrop-filter: blur(20px) saturate(1.7);
+}
+

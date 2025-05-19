@@ -1,0 +1,54 @@
+name: Push to Other Repository
+
+on:
+  workflow_dispatch:
+    # inputs:
+    #   exclude_folder:
+    #     description: 'Folder to exclude from push'
+    #     required: true
+    #     default: 'content'
+    #   target_repo:
+    #     description: 'Target repository URL'
+    #     required: true
+    #     default: ${{ secrets.MIRROR_REPO_URL }}
+
+jobs:
+  push-to-other-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+
+      - name: Create temporary directory
+        run: mkdir temp_repo
+
+      - name: Initialize new repository
+        run: |
+          cd temp_repo
+          git init
+          AUTH_TOKEN=$(echo "${{ secrets.MIRROR_REPO_GH_AUTH }}")
+          REPO_PATH=$(echo "${{ secrets.MIRROR_REPO_URL }}" | sed 's|https://github.com/||')
+          git remote add origin https://$AUTH_TOKEN@github.com/$REPO_PATH
+          git checkout -b main
+
+      - name: Copy files excluding specified folder
+        run: |
+          rsync -av --exclude='content' --exclude='.git' --exclude='temp_repo' ./ temp_repo/
+
+      - name: Add and commit files
+        run: |
+          cd temp_repo
+          git add .
+          git commit -m "Sync from source repository"
+
+      - name: Push to target repository
+        run: |
+          cd temp_repo
+          git push -u origin main --force
